@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App hideAlert should return an action 1`] = `
+Object {
+  "payload": Object {
+    "id": "test",
+  },
+  "type": "HIDE_ALERT",
+}
+`;
+
+exports[`App showAlert with type \`error\` should return an action 1`] = `
+Object {
+  "payload": Object {
+    "icon": undefined,
+    "id": "test",
+    "message": "Alright!",
+    "position": "bottom-right",
+    "timeout": 0,
+    "type": "error",
+  },
+  "type": "SHOW_ALERT",
+}
+`;
+
+exports[`App showAlert with type \`success\` should return an action 1`] = `
+Object {
+  "payload": Object {
+    "icon": undefined,
+    "id": "test",
+    "message": "Alright!",
+    "position": "bottom-right",
+    "timeout": 10,
+    "type": "success",
+  },
+  "type": "SHOW_ALERT",
+}
+`;
