@@ -1,6 +1,4 @@
 .browsehappy {
-  background: #ccc;
-  color: #000;
   margin: 2rem 0;
   padding: 2rem 0;
 }
@@ -13,6 +11,8 @@ html {
 
 body {
   min-height: 100%;
+  color: $text-color;
+  background: linear-gradient(to right, #2E8999, #8B4399)
 }
 
 img {

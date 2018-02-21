@@ -36,7 +36,7 @@ $font-family-sans-serif: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $headings-font-family: Lato, sans-serif;
 $headings-font-weight: 700;
 
-$body-bg: #fff;
+$body-bg: $primary-color;
 
 $theme-colors: (
   'primary':    $app-color,

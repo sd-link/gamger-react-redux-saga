@@ -1,9 +1,45 @@
 $media-path: '../../assets/media/';
 $font-path: '../../assets/fonts/';
 
-$header-height: 7rem;
+@font-face {
+	font-family: 'nexa-bold';
+	src: url('#{$font-path}nexa-bold.ttf') format('truetype'),
+		url('#{$font-path}nexa-bold.woff') format('woff'),
+		url('#{$font-path}nexa-bold.eot');
+}
+
+$header-height: 15rem;
 $footer-height: 4.8rem;
 
-$app-color: #00b4d5;
+//color
+$error: #f13642;
+$success: #35c25e;
+$info: #2f8ae3;
+$warning: #f9af2c;
+$danger: #f59f00;
+
+$gray-100: #f8f9fa;
+$gray-200: #f1f3f5;
+$gray-300: #e9ecef;
+$gray-400: #dee2e6;
+$gray-500: #ced4da;
+$gray-600: #adb5bd;
+$gray-700: #868e96;
+$gray-800: #495057;
+$gray-900: #343a40;
+
+$white: #fff;
+$black: #000;
+$gray: $gray-600;
+$dark-gray: $gray-700;
+$light-gray: $gray-500;
+$extra-light-gray: $gray-300;
+$super-light-gray: $gray-100;
+
+$primary-color: #4de4ff;
+$secondary-color: #E870FF;
+$text-color: $white;
+
+$app-color: $black;
 
 $app-easing: cubic-bezier(0.35, 0.01, 0.77, 0.34);

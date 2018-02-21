@@ -44,7 +44,13 @@
   }
 
   .app__logo svg {
-    width: 5rem;
+    width: 100%;
+    max-width: 50vw;
+  }
+  .logo-description {
+    font-family: 'nexa-bold';
+    font-size: 2.3rem;
+    color: $primary-color;
   }
 
   &__menu {
