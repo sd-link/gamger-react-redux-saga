@@ -1,152 +1,178 @@
 //@import 'font-awesome/scss/font-awesome.scss';
 
-$button-open-bg         : rgba(0,0,0,0.4);
-$button-open-bg-active  : rgba(0,0,0,0.7);
-$button-open-fg         : rgb(255,255,255);
 
-$button-close-bg        : rgb(255,255,255);
-$button-close-bg-active : rgba(255,255,255,0.7);
-$button-close-fg        : rgb(51,51,51);
 
-$menu-background        : rgb(51,51,51);
-$menu-text-base         : rgb(153,153,153);
-$menu-text-active       : rgb(255,255,255);
-$menu-selected-bg       : rgba(255,255,255,0.2);
-$menu-divider           : rgb(74,74,74);
+$menu-background        : rgba($black, 0.8);
+$menu-text-base         : $gray-300;
+$menu-text-active       : $primary-color;
+$menu-selected-bg       : rgba($secondary-color, 0.5);
+$menu-divider           : rgba($gray-900, 0.4);
+
+$button-open-bg         : $black;
+$button-open-bg-active  : $black;
+$button-open-fg         : $text-color;
+
+$button-close-bg        : $black;
+$button-close-bg-active : $black;
+$button-close-fg        : $text-color;
+
 
 .impromptu-font-sans {
-    font-family: sans-serif;
-    font-size: 0.8em;
+	font-family: sans-serif;
+	font-size: 0.8em;
 }
 
 /* Button styles */
 
 .button-open,
 .button-close {
-    font-size: 18px;
-    padding: 10px 16px;
-    line-height: 24px;
-    cursor: pointer;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	height: $header-height-min;
+	padding: 10px 16px;
+	cursor: pointer;
+	span {
+		font-family: nexa-bold;
+		font-size: $header-height-min/3;
+		margin: 0.5rem;
+		text-transform: uppercase;
+	}
+	i {
+		font-size: $header-height-min/2.5;
+		color: $primary-color;
+	}	
 }
 
 .button-open:active,
 .button-close:active {
-    box-shadow: none;
+	box-shadow: none;
 }
 
 .button-open {
-    border-radius: 0;
-    color: $button-open-fg;
-    background-color: $button-open-bg; 
+	border-radius: 0;
+	color: $button-open-fg;
+	background-color: $button-open-bg; 
 }
 
 .button-open:hover,
 .button-open:focus,
 .button-open:active {
-    color: $button-open-fg;
-    background-color: $button-open-bg-active; 
+	color: $button-open-fg;
+	background-color: $button-open-bg-active; 
 }
 
 .button-close {
-    border-radius: 0;
-    color: $button-close-fg;
-    background-color: $button-close-bg;
+	border-radius: 0;
+	color: $button-close-fg;
+	background-color: $button-close-bg;
 }
 
 .button-close:hover,
 .button-close:focus,
 .button-close:active {
-    color: $button-close-fg;
-    background-color: $button-close-bg-active; 
+	color: $button-close-fg;
+	background-color: $button-close-bg-active; 
 }
 
 /* Menu styles */
  
 .impromptu-toggle-open {
-    z-index: 1;
-    position: fixed;
-    top: 0;
-    margin: 5px 5px;
+	z-index: 1;
+	position: fixed;
+	top: 0;
 }
 
 .impromptu-menu-wrapper {
-    z-index: 1000;
-    position: fixed;
-    top: 0;
-    height: 100%;
-    overflow-y: auto;
-    background: $menu-background;
-    -webkit-transition: all 0.4s ease 0s;
-    -moz-transition: all 0.4s ease 0s;
-    -ms-transition: all 0.4s ease 0s;
-    -o-transition: all 0.4s ease 0s;
-    transition: all 0.4s ease 0s;
+	z-index: 1000;
+	position: fixed;
+	top: 0;
+	height: 100%;
+	overflow-y: auto;
+	background: $menu-background;
+	-webkit-transition: all 0.4s ease 0s;
+	-moz-transition: all 0.4s ease 0s;
+	-ms-transition: all 0.4s ease 0s;
+	-o-transition: all 0.4s ease 0s;
+	transition: all 0.4s ease 0s;
 }
 
 .impromptu-menu-wrapper.impromptu-active {
-    -webkit-transition: all 0.4s ease 0s;
-    -moz-transition: all 0.4s ease 0s;
-    -ms-transition: all 0.4s ease 0s;
-    -o-transition: all 0.4s ease 0s;
-    transition: all 0.4s ease 0s;
+	-webkit-transition: all 0.4s ease 0s;
+	-moz-transition: all 0.4s ease 0s;
+	-ms-transition: all 0.4s ease 0s;
+	-o-transition: all 0.4s ease 0s;
+	transition: all 0.4s ease 0s;
 }
 
 .impromptu-menu-wrapper {
 
-    .toggle {
-        margin: 5px 5px 0 0;
-    }
+	.toggle {
+		margin: 0;
+	}
 
-    .sidebar-nav {
-        position: absolute;
-        top: 0;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-    }
+	.sidebar-nav {
+		position: absolute;
+		top: 0;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+	}
 
-    .sidebar-nav li {
-        text-indent: 20px;
-        line-height: 40px;
-        cursor: pointer;
-    }
+	.sidebar-nav li {
+		text-indent: 2rem;
+		line-height: 4rem;
+		cursor: pointer;
+	}
 
-    .sidebar-nav li * {
-        display: block;
-        text-decoration: none;
-        color: $menu-text-base;
-    }
+	.sidebar-nav li * {
+		display: flex;
+		font-family: 'nexa-bold';
+		text-decoration: none;
+		color: $menu-text-base;
+		text-transform: uppercase;
+		align-items: center;
+	}
 
-    .sidebar-nav li *:hover {
-        text-decoration: none;
-        color: $menu-text-active;
-        background: $menu-selected-bg;
-    }
+	.sidebar-nav li *:hover {
+		text-decoration: none;
+		color: $menu-text-active;
+		background: $menu-selected-bg;
+	}
 
-    .sidebar-nav li a:active,
-    .sidebar-nav li a:focus {
-        text-decoration: none;
-    }
+	.sidebar-nav li a:active,
+	.sidebar-nav li a:focus {
+		text-decoration: none;
+		display: flex;
+		align-items: center;
+	}
 
-    .sidebar-nav > .sidebar-brand {
-        height: 54px;
-        font-size: 1.2em;
-        line-height: 54px;
-    }
+	.sidebar-nav > .sidebar-brand {
+		height: 54px;
+		font-size: 1.2em;
+		line-height: 54px;
+	}
 
-    .sidebar-nav > .sidebar-brand span {
-        color: $menu-text-base;
-    }
-    
-    .sidebar-nav > .sidebar-brand span:hover {
-        color: $menu-text-active;
-        background: none;
-    }
+	.sidebar-nav > .sidebar-brand span {
+		color: $menu-text-base;
+	}
+	
+	.sidebar-nav > .sidebar-brand span:hover {
+		color: $menu-text-active;
+		background: none;
+	}
+	.i-sign-in {
+		margin-right: 0.5rem;
+	}
 
-    .impromptu-divider.sidebar-nav li {
-        border-bottom: 1px solid $menu-divider;
-    }
+	.i-sign-out {
+		text-indent: 0.5rem;
+	}
+
+	.impromptu-divider.sidebar-nav li {
+		border-bottom: 1px solid $menu-divider;
+	}
 
 }

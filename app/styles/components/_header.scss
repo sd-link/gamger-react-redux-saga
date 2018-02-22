@@ -6,6 +6,8 @@
   right: 0;
   top: 0;
   z-index: 200;
+  transition-duration: 1s;
+  -webkit-transition-duration: 1s;
 
   &:before {
     background-color: $app-color;
@@ -18,8 +20,8 @@
   }
 
   > .app__container {
-    align-items: center;
     display: flex;
+    align-items: center;
     height: 100%;
     justify-content: space-between;
     padding-bottom: $grid-gutter-width / 2;
@@ -40,6 +42,8 @@
           width: 3rem;
           height: 3rem;
           border-radius: 50%;
+          transition-duration: 0.3s;
+          -webkit-transition-duration: 0.3s;
         }
         .i-facebook {
           background-color: $facebook-color;
@@ -63,11 +67,15 @@
     .app__logo svg {
       width: 100%;
       max-width: 60vw;
+      transition-duration: 0.3s;
+      -webkit-transition-duration: 0.3s;
     }
     .logo-description {
       font-family: 'nexa-bold';
       font-size: 2.3rem;
       color: $primary-color;
+      transition-duration: 0.2s;
+      -webkit-transition-duration: 0.2s;
     }
   }
 
@@ -86,55 +94,41 @@
       margin-left: $grid-gutter-width / 2;
     }
   }
-
-
-  &__menu {
-
-    ul {
-      display: flex;
-      justify-content: flex-end;
-      line-height: 1;
-      margin-bottom: 0;
-
-      li {
-        &:not(:last-child) {
-          margin-right: $grid-gutter-width / 3;
+}
+@media only screen and (max-width: 800px) {
+  .app__header {
+    height: $header-height-min !important; 
+    .app__container {
+      .app__container__logo {
+        .app__logo svg {
+          height: $header-height-min/3;
+          max-width: 15rem;
+        }
+        .logo-description {
+          font-size: 1.1rem;
         }
       }
-    }
-
-    a {
-      color: darken($primary-color, 20);
-      font-size: 1.3rem;
-
-      @include lg {
-        font-size: 1.6rem;
+      .app__socialbar {
+        display: none;
+        a {
+          text-decoration: none; 
+          i {
+            font-size: 1.7rem;
+            margin: 0.3rem;
+            width: 2.1rem;
+            height: 2.1rem;
+          }  
+        }
       }
-
-      &.active {
-        color: $primary-color;
-      }
-
-      span {
-        display: inline-block;
-        margin-left: $grid-gutter-width / 12;
-        text-transform: uppercase;
+      .app__container__login {
+        display: none !important;
       }
     }
   }
 
 }
-@media only screen and (max-width: 900px) {
-  .app__socialbar {
-    display: none !important;
-  }
-  .app__container__login {
-    display: none !important;
-  }
-
-}
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 800px) {
   .app__header__menu {
-    //display: none !important; 
+    display: none !important; 
   }
 }

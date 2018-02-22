@@ -13,7 +13,6 @@ export default class Menu extends React.Component {
 		this.setState({
 			visible: !this.state.visible
 		});
-		console.log(this.state.visible)
 	}
 	position() {
 		var pos = this.props.position;
@@ -39,19 +38,18 @@ export default class Menu extends React.Component {
 		var capitalized = position.substr(0, 1).toUpperCase() + position.substr(1);
 		styles['margin' + capitalized] = '-' + width;
 		styles[position] = (this.state.visible ? -1 * width : 0);
-		console.log(styles)
 		return styles;
 	}
 	render() {
 		return (
 			<div>
 				<a style={this.buttonStyles()} onClick={this.toggle} className="button-open toggle impromptu-toggle-open">
-					<i className="fa fa-bars"></i>====
+					<span>Menu</span><i className="i-bars"></i>
 				</a>
 				<nav style={this.wrapperStyles()} className='impromptu-menu-wrapper'>
 					<ul className={'sidebar-nav' + (this.props.showDividers ? ' impromptu-divider' : '')} style={{width: this.props.width || 250}}>
 						<a onClick={this.toggle} className="button-close pull-right toggle">
-							<i className="fa fa-times"></i>xxxx
+							<span>Menu</span><i className="i-times"></i>
 						</a>
 						{
 							React.Children.map(this.props.children, function(item) {

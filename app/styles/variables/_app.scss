@@ -8,7 +8,8 @@ $font-path: '../../assets/fonts/';
 		url('#{$font-path}nexa-bold.eot');
 }
 
-$header-height: 15rem;
+$header-height: 12rem;
+$header-height-min: 5rem;
 $footer-height: 4.8rem;
 
 //color
@@ -46,5 +47,6 @@ $linkedin-color: #007AB9;
 $instagram-color: #517FA4;
 
 $app-color: $black;
+
 
 $app-easing: cubic-bezier(0.35, 0.01, 0.77, 0.34);
