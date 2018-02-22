@@ -1,0 +1,86 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+
+export default class Menu extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = ({
+			visible: true
+		});
+		this.toggle = this.toggle.bind(this);
+	}
+	toggle() {
+		this.setState({
+			visible: !this.state.visible
+		});
+		console.log(this.state.visible)
+	}
+	position() {
+		var pos = this.props.position;
+		switch (pos) {
+			case 'left':
+			case 'right':
+				return pos;
+			default:
+				return 'right';
+		}
+	}
+	buttonStyles() {
+		var styles = {};
+		styles[this.position()] = 0;
+		return styles;
+	}
+	wrapperStyles() {
+		var width = this.props.width || 250;
+		var styles = {
+			width: width
+		};
+		var position = this.position();
+		var capitalized = position.substr(0, 1).toUpperCase() + position.substr(1);
+		styles['margin' + capitalized] = '-' + width;
+		styles[position] = (this.state.visible ? -1 * width : 0);
+		console.log(styles)
+		return styles;
+	}
+	render() {
+		return (
+			<div>
+				<a style={this.buttonStyles()} onClick={this.toggle} className="button-open toggle impromptu-toggle-open">
+					<i className="fa fa-bars"></i>====
+				</a>
+				<nav style={this.wrapperStyles()} className='impromptu-menu-wrapper'>
+					<ul className={'sidebar-nav' + (this.props.showDividers ? ' impromptu-divider' : '')} style={{width: this.props.width || 250}}>
+						<a onClick={this.toggle} className="button-close pull-right toggle">
+							<i className="fa fa-times"></i>xxxx
+						</a>
+						{
+							React.Children.map(this.props.children, function(item) {
+							var onClick = function() {
+								if ('function' === typeof item.props.onClick)
+									item.props.onClick();
+								if (true === this.props.autoClose)
+									this.toggle();
+							};
+							if (item.type.displayName === "Brand") {
+								return (
+									<li onClick={onClick.bind(this)} className="sidebar-brand">
+										<span>{item.props.children}</span>
+									</li>
+								);
+							} else if (item.type.displayName === "Item") {
+								return (
+									<li onClick={onClick.bind(this)}>
+										<span>{item.props.children}</span>
+									</li>
+								);
+							} else {
+								return item;
+							}
+						}.bind(this))}
+					</ul>
+				</nav>
+			</div>
+		);
+	}
+}; 
+

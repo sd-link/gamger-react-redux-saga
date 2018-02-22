@@ -10,13 +10,13 @@ button {
   &:active,
   &:focus,
   &:hover {
-    outline: none;
+    box-shadow: 1px 2px 4px rgba($white, 1);
   }
 }
 
 .btn {
+  text-transform: uppercase;
   box-shadow: none !important;
-  outline: none !important;
 }
 
 .btn-icon {
@@ -28,6 +28,26 @@ button {
     font-weight: 700;
     margin-left: $grid-gutter-width / 6;
     text-transform: uppercase;
+  }
+}
+
+.btn-outline-primary {
+  border: 1px solid $primary-color;
+  &:active,
+  &:focus,
+  &:hover {
+    border: 1px solid $primary-color;
+    box-shadow: 2px 2px 4px rgba($white, 1);
+  }
+}
+
+.btn-outline-secondary {
+  border: 1px solid $secondary-color;
+  &:active,
+  &:focus,
+  &:hover {
+    border: 1px solid $secondary-color;
+    box-shadow: 2px 2px 4px rgba($white, 1);
   }
 }
 
