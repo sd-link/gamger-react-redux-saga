@@ -53,6 +53,7 @@ export default class Menu extends React.Component {
 						</a>
 						{
 							React.Children.map(this.props.children, function(item) {
+							if (item === null) return null;
 							var onClick = function() {
 								if ('function' === typeof item.props.onClick)
 									item.props.onClick();

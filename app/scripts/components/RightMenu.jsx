@@ -1,14 +1,26 @@
 import React from 'react';
+import { logOut } from 'actions';
+import { login } from 'actions';
+import PropTypes from 'prop-types';
 import config from 'config';
 import Menu from 'components/sidemenu/Menu';
 import Item from 'components/sidemenu/Item';
 import Brand from 'components/sidemenu/Brand';
 import Logo from 'components/Logo';
+import SocialBar from 'components/SocialBar';
 export default class RightMenu extends React.Component {
+  static propTypes = {
+    dispatch: PropTypes.func.isRequired,
+    user: PropTypes.object.isRequired,
+  };
+  
   handleClick(item) {
     switch (item) {
+      case 0:
+        this.props.dispatch(logOut());
+        break;
       case 1:
-        window.location.hash = 'aaaaa';
+        this.props.dispatch(login());
         break;
       case 2:
         window.location.hash = 'bbbbb';
@@ -24,16 +36,17 @@ export default class RightMenu extends React.Component {
     }
   }
   render() {
+    const { dispatch, user } = this.props;
     return (
       <Menu showDividers={true} position='right'>
-        <Brand><a href="#"><Logo/></a></Brand>
-        <Item onClick={this.handleClick.bind(null, 6)}><i className="i-sign-in" />LogIn</Item>
-        <Item onClick={this.handleClick.bind(null, 1)}>Discover</Item>
-        <Item onClick={this.handleClick.bind(null, 2)}>Create</Item>
-        <Item onClick={this.handleClick.bind(null, 3)}>Produce</Item>
-        <Item onClick={this.handleClick.bind(null, 4)}>Explore</Item>
-        <Item onClick={this.handleClick.bind(null, 5)}>Shop</Item>
-        <Item onClick={this.handleClick.bind(null, 6)}>LogOut<i className="i-sign-out" /></Item>
+        <SocialBar/>
+        {!user.isAuthenticated && <Item onClick={this.handleClick.bind(this, 1)}><i className="i-sign-in" />LogIn</Item>}
+        <Item onClick={this.handleClick.bind(null, 2)}>Discover</Item>
+        <Item onClick={this.handleClick.bind(null, 3)}>Create</Item>
+        <Item onClick={this.handleClick.bind(null, 4)}>Produce</Item>
+        <Item onClick={this.handleClick.bind(null, 5)}>Explore</Item>
+        <Item onClick={this.handleClick.bind(null, 6)}>Shop</Item>
+        {user.isAuthenticated && <Item onClick={this.handleClick.bind(this, 0)}>LogOut<i className="i-sign-out" /></Item>}
       </Menu>
     );
   }
