@@ -53,29 +53,35 @@ export default class Menu extends React.Component {
 						</a>
 						{
 							React.Children.map(this.props.children, function(item) {
-							if (item === null) return null;
-							var onClick = function() {
-								if ('function' === typeof item.props.onClick)
-									item.props.onClick();
-								if (true === this.props.autoClose)
-									this.toggle();
-							};
-							if (item.type.displayName === "Brand") {
-								return (
-									<li onClick={onClick.bind(this)} className="sidebar-brand">
-										<span>{item.props.children}</span>
-									</li>
-								);
-							} else if (item.type.displayName === "Item") {
-								return (
-									<li onClick={onClick.bind(this)}>
-										<span>{item.props.children}</span>
-									</li>
-								);
-							} else {
-								return item;
-							}
-						}.bind(this))}
+								
+								if (item === null) return null;
+								var onClick = function() {
+									if ('function' === typeof item.props.onClick)
+										item.props.onClick();
+									if (true === this.props.autoClose)
+										this.toggle();
+								};
+								if (item.type.displayName === "SocialBar") {
+									return (
+										<li className="sidebar-brand">
+											{item}
+										</li>
+									);
+								} else if (item.type.displayName === "Item") {
+									return (
+										<li className="sidebar-item" onClick={onClick.bind(this)}>
+											<span>{item.props.children}</span>
+										</li>
+									);
+								} else {
+									return (
+										<li>
+											{item}
+										</li>
+									)
+								}
+							}.bind(this))
+						}
 					</ul>
 				</nav>
 			</div>

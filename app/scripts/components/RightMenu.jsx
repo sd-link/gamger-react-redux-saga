@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import config from 'config';
 import Menu from 'components/sidemenu/Menu';
 import Item from 'components/sidemenu/Item';
-import Brand from 'components/sidemenu/Brand';
 import Logo from 'components/Logo';
 import SocialBar from 'components/SocialBar';
 export default class RightMenu extends React.Component {

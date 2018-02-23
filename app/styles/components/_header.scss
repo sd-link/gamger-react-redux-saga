@@ -44,6 +44,9 @@
           border-radius: 50%;
           transition-duration: 0.3s;
           -webkit-transition-duration: 0.3s;
+          &:hover {
+            background-color: $gray-600;
+          }
         }
         .i-facebook {
           background-color: $facebook-color;
@@ -108,7 +111,7 @@
           font-size: 1.1rem;
         }
       }
-      .app__socialbar {
+      >.app__socialbar {
         display: none;
         a {
           text-decoration: none; 

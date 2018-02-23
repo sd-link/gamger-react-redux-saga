@@ -118,13 +118,15 @@ $button-close-fg        : $text-color;
 		padding: 0;
 		list-style: none;
 		display: flex;
-		flex-direction: column;
+		flex-direction: column;		
+		transition-duration: 0.3s;
+		-webkit-transition-duration: 0.3s;
 	}
 
 	.sidebar-nav li {
 		text-indent: 2rem;
 		line-height: 4rem;
-		cursor: pointer;
+		cursor: pointer;		
 	}
 
 	.sidebar-nav li * {
@@ -136,33 +138,27 @@ $button-close-fg        : $text-color;
 		align-items: center;
 	}
 
-	.sidebar-nav li *:hover {
+	.sidebar-nav li.sidebar-item *:hover {
 		text-decoration: none;
 		color: $menu-text-active;
 		background: $menu-selected-bg;
 	}
 
-	.sidebar-nav li a:active,
-	.sidebar-nav li a:focus {
+	.sidebar-nav li.sidebar-item a:active,
+	.sidebar-nav li.sidebar-item a:focus {
 		text-decoration: none;
 		display: flex;
 		align-items: center;
 	}
 
 	.sidebar-nav > .sidebar-brand {
-		height: 54px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 6rem;
 		font-size: 1.2em;
-		line-height: 54px;
 	}
-
-	.sidebar-nav > .sidebar-brand span {
-		color: $menu-text-base;
-	}
-	
-	.sidebar-nav > .sidebar-brand span:hover {
-		color: $menu-text-active;
-		background: none;
-	}
+  
 	.i-sign-in {
 		margin-right: 0.5rem;
 	}
@@ -175,4 +171,10 @@ $button-close-fg        : $text-color;
 		border-bottom: 1px solid $menu-divider;
 	}
 
+
+	.app__socialbar {
+		display: flex;
+		justify-content: center;
+		text-indent: 0;
+	}
 }
