@@ -9,7 +9,8 @@ export default class MenuBar extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = ({
-			fixed: true
+			fixed: true,
+			menus: PropTypes.object.isRequired,
 		});
 		//this.toggle = this.toggle.bind(this);
 	}
@@ -30,25 +31,17 @@ export default class MenuBar extends React.Component {
 
 	}
   render() {
-		const menu_css = this.state.fixed ? "app__menu fixed_top":"app__menu";
+	
+	const { menus } = this.props;
+	const menu_css = this.state.fixed ? "app__menu fixed_top":"app__menu";
     return (
 			<div className = {menu_css} >
 				<ul className="app__menu-primary">
-					<li>
-						Discover.
-					</li>
-					<li>
-						Create.
-					</li>
-					<li>
-						produce.
-					</li>
-					<li>
-						Explore.
-					</li>
-					<li>
-						Shop.
-					</li>
+					{
+						menus[menus.display].map((item, index) => (
+							<li key={index}>{item[1]}</li>
+						))
+					}
 				</ul>
 			</div>
 		)

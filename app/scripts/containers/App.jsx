@@ -42,7 +42,6 @@ export class App extends React.Component {
 
   render() {
     const { app, dispatch, user } = this.props;
-
     return (
       <ConnectedRouter history={history}>
         <div
@@ -58,18 +57,18 @@ export class App extends React.Component {
             titleTemplate={`%s | ${config.name}`}
             titleAttributes={{ itemprop: 'name', lang: 'pt-br' }}
           />
-          <Header dispatch={dispatch} user={user} />
+          <Header dispatch={dispatch} user={user} menus={app.menus}/>
 
           <main className="app__main">          
             <SignUpBar/>
-            <MenuBar/>
+            <MenuBar menus={app.menus}/>
             <Switch>
               <RoutePublic isAuthenticated={user.isAuthenticated} path="/" exact component={Home} />
               <RoutePrivate isAuthenticated={user.isAuthenticated} path="/private" component={Private} />
               <Route component={NotFound} />
             </Switch>
           </main>
-          <Footer />
+          <Footer menus={app.menus} />
           <SystemAlerts alerts={app.alerts} dispatch={dispatch} />
         </div>
       </ConnectedRouter>

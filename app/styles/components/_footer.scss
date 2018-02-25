@@ -1,13 +1,9 @@
 .app__footer {
-  border-top: 0.1rem solid #ddd;
-
+  background-color: rgba($app-color,0.7);
   .app__container {
     padding-bottom: $grid-gutter-width / 2;
     padding-top: $grid-gutter-width / 2;
   }
 
-  &__github {
-    display: flex;
-    justify-content: space-between;
-  }
+ 
 }

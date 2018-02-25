@@ -11,9 +11,11 @@ export default class RightMenu extends React.Component {
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
     user: PropTypes.object.isRequired,
+    menus: PropTypes.object.isRequired,
   };
   
-  handleClick(item) {
+  //
+  handleClick(item, target) {
     switch (item) {
       case 0:
         this.props.dispatch(logOut());
@@ -22,30 +24,26 @@ export default class RightMenu extends React.Component {
         this.props.dispatch(login());
         break;
       case 2:
-        window.location.hash = 'bbbbb';
-        break;
-      case 3:
-        window.location.hash = 'ccccc';
-        break;
-      case 4:
-        window.location.hash = 'ddddd';
+        window.location.hash = 'login';
         break;
       default:
-        window.location.hash = '';
+        window.location.hash = target;
     }
   }
   render() {
-    const { dispatch, user } = this.props;
+    const rm = this;
+    const { dispatch, user, menus } = this.props;
     return (
       <Menu showDividers={true} position='right'>
         <SocialBar/>
-        {!user.isAuthenticated && <Item onClick={this.handleClick.bind(this, 1)}><i className="i-sign-in" />SignIn</Item>}
-        <Item onClick={this.handleClick.bind(null, 2)}>Discover</Item>
-        <Item onClick={this.handleClick.bind(null, 3)}>Create</Item>
-        <Item onClick={this.handleClick.bind(null, 4)}>Produce</Item>
-        <Item onClick={this.handleClick.bind(null, 5)}>Explore</Item>
-        <Item onClick={this.handleClick.bind(null, 6)}>Shop</Item>
-        {user.isAuthenticated && <Item onClick={this.handleClick.bind(this, 0)}>SignOut<i className="i-sign-out" /></Item>}
+        {!user.isAuthenticated && <Item onClick={this.handleClick.bind(this, 1, '')}><i className="i-sign-in" />SignIn</Item>}
+        {!user.isAuthenticated && <Item onClick={this.handleClick.bind(this, 2, '')}><i className="i-edit" />SignUp</Item>}
+        {
+          menus[menus.display].map((item, index) => (
+            <Item key={index} onClick={rm.handleClick.bind(null, item[1], item[0] )}>{item[1]}</Item>
+          ))
+        }
+        {user.isAuthenticated && <Item onClick={this.handleClick.bind(this, 0, '')}>SignOut<i className="i-sign-out" /></Item>}
       </Menu>
     );
   }

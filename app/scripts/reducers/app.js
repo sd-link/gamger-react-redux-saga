@@ -6,6 +6,23 @@ import { ActionTypes } from 'constants/index';
 
 export const appState = {
   alerts: [],
+  menus: {
+    primary:[
+      ['discover','discover','primary'],
+      ['create','create','primary'],
+      ['produce','produce','primary'],
+      ['explore','explore','primary'],
+      ['shop','shop','primary']
+    ],
+    secondary:[
+      ['home','discover','primary'],
+      ['about','about','secondary'],
+      ['partner','partner','secondary'],
+      ['support','support','secondary'],
+      ['shop','shop','secondary']
+    ],
+    display: 'secondary',
+  },
 };
 
 export default {
