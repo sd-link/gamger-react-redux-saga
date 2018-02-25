@@ -2,6 +2,7 @@
 	line-height: $header-height-min;
 	background: $app-color;	
 	width: 100%;
+	z-index: 50;
 	ul {
 		margin: 0;
 	}

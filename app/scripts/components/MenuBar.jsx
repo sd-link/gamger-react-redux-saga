@@ -26,12 +26,17 @@ export default class MenuBar extends React.Component {
 	handleScroll = e => {
 		scroll = document.documentElement.scrollTop;
 		this.setState({
-			fixed: (scroll > 220) && (!this.props.footer)
+			fixed: (scroll > 230) && (!this.props.footer)
 		});
 
 	}
+  handleClick(item, target) {
+    window.location = target;
+  }
+
+
   render() {
-	
+		const rm = this;
 		const { menus, footer } = this.props;
 		var menu_css = this.state.fixed ? "app__menu fixed_top":"app__menu";
 		var menu_type = menus.display;
@@ -45,7 +50,7 @@ export default class MenuBar extends React.Component {
 				<ul className="app__menu-primary">
 					{
 						menus[menu_type].map((item, index) => (
-							<li key={index}>{item[1]}</li>
+							<li key={index} onClick={rm.handleClick.bind(null, item[1], item[0])}>{item[1]}</li>
 						))
 					}
 				</ul>

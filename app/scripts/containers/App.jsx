@@ -13,6 +13,8 @@ import config from 'config';
 import { showAlert } from 'actions';
 
 import Home from 'routes/Home';
+import Test from 'routes/Test';
+
 import Private from 'routes/Private';
 import NotFound from 'routes/NotFound';
 
@@ -64,6 +66,7 @@ export class App extends React.Component {
             <MenuBar menus={app.menus} footer={false}/>
             <Switch>
               <RoutePublic isAuthenticated={user.isAuthenticated} path="/" exact component={Home} />
+              <RoutePublic isAuthenticated={user.isAuthenticated} path="/test"  component={Test} />
               <RoutePrivate isAuthenticated={user.isAuthenticated} path="/private" component={Private} />
               <Route component={NotFound} />
             </Switch>

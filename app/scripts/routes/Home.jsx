@@ -26,6 +26,7 @@ export class Home extends React.PureComponent {
     return (
       <div key="Home" className="app__home app__route">
         <div className="app__container">
+          Home
 
  
         </div>

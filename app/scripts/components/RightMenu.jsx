@@ -27,7 +27,7 @@ export default class RightMenu extends React.Component {
         window.location.hash = 'login';
         break;
       default:
-        window.location.hash = target;
+        window.location = target;
     }
   }
   render() {
