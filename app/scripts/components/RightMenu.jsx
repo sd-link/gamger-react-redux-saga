@@ -1,6 +1,7 @@
 import React from 'react';
 import { logOut } from 'actions';
 import { login } from 'actions';
+import { redirect } from 'actions';
 import PropTypes from 'prop-types';
 import config from 'config';
 import Menu from 'components/sidemenu/Menu';
@@ -27,7 +28,7 @@ export default class RightMenu extends React.Component {
         window.location.hash = 'login';
         break;
       default:
-        window.location = target;
+        this.props.dispatch(redirect(target));
     }
   }
   render() {
@@ -40,7 +41,7 @@ export default class RightMenu extends React.Component {
         {!user.isAuthenticated && <Item onClick={this.handleClick.bind(this, 2, '')}><i className="i-edit" />SignUp</Item>}
         {
           menus[menus.display].map((item, index) => (
-            <Item key={index} onClick={rm.handleClick.bind(null, item[1], item[0] )}>{item[1]}</Item>
+            <Item key={index} onClick={rm.handleClick.bind(this, item[1], item[0] )}>{item[1]}</Item>
           ))
         }
         {user.isAuthenticated && <Item onClick={this.handleClick.bind(this, 0, '')}>SignOut<i className="i-sign-out" /></Item>}

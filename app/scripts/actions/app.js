@@ -50,3 +50,17 @@ export function showAlert(message: string, options: Object): Object {
     },
   };
 }
+
+/**
+ * retdirect page
+ * @param {string} page
+ * 
+ * @returns {Object}
+ */
+export function redirect(page: string): Object {
+  return {
+    type: ActionTypes.PAGE_REDIRECT_REQUEST,
+    payload: {page},
+  };
+}
+

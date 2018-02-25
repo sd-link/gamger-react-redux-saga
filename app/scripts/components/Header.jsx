@@ -53,7 +53,7 @@ export default class Header extends React.PureComponent {
           
           </div>
           <div className="app__header__menu">
-            <RightMenu user={user} dispatch={dispatch} menus={menus}/>
+            <RightMenu user={user} dispatch={dispatch} menus={menus} history={this.props.history}/>
           </div>
         </div>
       </header>

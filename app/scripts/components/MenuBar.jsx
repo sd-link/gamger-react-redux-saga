@@ -44,7 +44,6 @@ export default class MenuBar extends React.Component {
 			menu_type = "secondary";
 			menu_css += " app__menu-footer"
 		} 
-		console.log(menu_type)
     return (
 			<div className = {menu_css} >
 				<ul className="app__menu-primary">

@@ -23,6 +23,7 @@ export const appState = {
     ],
     display: 'primary',
   },
+  page: 'home',
 };
 
 export default {
@@ -44,5 +45,11 @@ export default {
         alerts: { $push: [payload] },
       });
     },
+    [ActionTypes.PAGE_REDIRECT_SUCCESS](state) {
+      return immutable(state, {
+        page: { $set: state },
+      });
+    },
+
   }),
 };
