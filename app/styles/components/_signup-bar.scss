@@ -1,0 +1,21 @@
+.app__signup-bar {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	height: $header-height;
+
+	div {
+		font-family: 'nexa-bold';
+		font-size: $font-size-h2;
+		text-transform: uppercase;
+		padding: 2rem;
+	}
+ 	button{
+		display: flex;
+		align-items: center;
+		font-family: 'nexa-bold';
+		font-size: $font-size-h3;
+		color: $primary-color;
+ 	}
+}

@@ -17,6 +17,7 @@ button {
 .btn {
   text-transform: uppercase;
   box-shadow: none !important;
+  padding: $grid-gutter-width / 8 $grid-gutter-width / 2;
 }
 
 .btn-icon {
@@ -32,34 +33,37 @@ button {
 }
 
 .btn-outline-primary {
+  background-color: rgba($app-color, 0.3);
   border: 1px solid $primary-color;
   &:active,
   &:focus,
   &:hover {
     border: 1px solid $primary-color;
-    box-shadow: 2px 2px 4px rgba($white, 1);
+    background-color: rgba($primary-color, 0.5);
+    color: invert($app-color);
   }
 }
 
 .btn-outline-secondary {
+  background-color: rgba($app-color, 0.3);
   border: 1px solid $secondary-color;
   &:active,
   &:focus,
   &:hover {
     border: 1px solid $secondary-color;
-    box-shadow: 2px 2px 4px rgba($white, 1);
+    background-color: rgba($secondary-color, 0.5);
+    color: invert($app-color);
   }
 }
 
 .btn-loading {
   @include striped-bg();
   animation: btn-loading 0.5s linear infinite;
-  filter: grayscale(30%);
   pointer-events: none;
   transition: none !important;
 
   &--light {
-    @include striped-bg(45deg, $gray-500, $gray-400);
+    @include striped-bg(45deg, $primary-color, $secondary-color);
   }
 }
 

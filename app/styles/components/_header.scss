@@ -2,7 +2,7 @@
   background-color: rgba($app-color, 0.9);
   height: $header-height;
   left: 0;
-  position: fixed;
+  //position: fixed;
   right: 0;
   top: 0;
   z-index: 200;
@@ -66,16 +66,17 @@
   .app__container__logo {
     display: flex;
     flex-direction: column;
-    align-items: center;
     .app__logo svg {
-      width: 100%;
+      display: flex;
+      align-items: center;
+      width: 80%;
       max-width: 60vw;
       transition-duration: 0.3s;
       -webkit-transition-duration: 0.3s;
     }
     .logo-description {
       font-family: 'nexa-bold';
-      font-size: 2.3rem;
+      font-size: 2rem;
       color: $primary-color;
       transition-duration: 0.2s;
       -webkit-transition-duration: 0.2s;
@@ -98,40 +99,4 @@
     }
   }
 }
-@media only screen and (max-width: 800px) {
-  .app__header {
-    height: $header-height-min !important; 
-    .app__container {
-      .app__container__logo {
-        .app__logo svg {
-          height: $header-height-min/3;
-          max-width: 15rem;
-        }
-        .logo-description {
-          font-size: 1.1rem;
-        }
-      }
-      >.app__socialbar {
-        display: none;
-        a {
-          text-decoration: none; 
-          i {
-            font-size: 1.7rem;
-            margin: 0.3rem;
-            width: 2.1rem;
-            height: 2.1rem;
-          }  
-        }
-      }
-      .app__container__login {
-        display: none !important;
-      }
-    }
-  }
 
-}
-@media only screen and (min-width: 800px) {
-  .app__header__menu {
-    display: none !important; 
-  }
-}

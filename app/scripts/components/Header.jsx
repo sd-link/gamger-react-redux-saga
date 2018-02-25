@@ -41,12 +41,12 @@ export default class Header extends React.PureComponent {
           <div className="app__container__login">
             {user.isAuthenticated &&
               <a className="btn btn-primary btn-outline-primary" onClick={this.handleClickLogout}>
-                <span>logout</span>
+                <span>SignOut</span>
               </a>
             }
             {!user.isAuthenticated &&
               <a className="btn btn-primary btn-outline-primary" onClick={this.handleClickLogin}>
-                <span>logoin</span>
+                <span>SignIn</span>
               </a>
             }      
           

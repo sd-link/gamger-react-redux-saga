@@ -39,13 +39,13 @@ export default class RightMenu extends React.Component {
     return (
       <Menu showDividers={true} position='right'>
         <SocialBar/>
-        {!user.isAuthenticated && <Item onClick={this.handleClick.bind(this, 1)}><i className="i-sign-in" />LogIn</Item>}
+        {!user.isAuthenticated && <Item onClick={this.handleClick.bind(this, 1)}><i className="i-sign-in" />SignIn</Item>}
         <Item onClick={this.handleClick.bind(null, 2)}>Discover</Item>
         <Item onClick={this.handleClick.bind(null, 3)}>Create</Item>
         <Item onClick={this.handleClick.bind(null, 4)}>Produce</Item>
         <Item onClick={this.handleClick.bind(null, 5)}>Explore</Item>
         <Item onClick={this.handleClick.bind(null, 6)}>Shop</Item>
-        {user.isAuthenticated && <Item onClick={this.handleClick.bind(this, 0)}>LogOut<i className="i-sign-out" /></Item>}
+        {user.isAuthenticated && <Item onClick={this.handleClick.bind(this, 0)}>SignOut<i className="i-sign-out" /></Item>}
       </Menu>
     );
   }

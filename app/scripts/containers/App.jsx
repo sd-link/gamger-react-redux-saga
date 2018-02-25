@@ -18,6 +18,8 @@ import NotFound from 'routes/NotFound';
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
+import SignUpBar from 'components/SignUpBar';
+import MenuBar from 'components/MenuBar';
 import SystemAlerts from 'components/SystemAlerts';
 
 export class App extends React.Component {
@@ -36,6 +38,7 @@ export class App extends React.Component {
       dispatch(showAlert('Hello! And welcome!', { type: 'success', icon: 'i-trophy' }));
     }
   }
+
 
   render() {
     const { app, dispatch, user } = this.props;
@@ -56,7 +59,10 @@ export class App extends React.Component {
             titleAttributes={{ itemprop: 'name', lang: 'pt-br' }}
           />
           <Header dispatch={dispatch} user={user} />
-          <main className="app__main">
+
+          <main className="app__main">          
+            <SignUpBar/>
+            <MenuBar/>
             <Switch>
               <RoutePublic isAuthenticated={user.isAuthenticated} path="/" exact component={Home} />
               <RoutePrivate isAuthenticated={user.isAuthenticated} path="/private" component={Private} />

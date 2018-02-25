@@ -26,18 +26,8 @@ export class Home extends React.PureComponent {
     return (
       <div key="Home" className="app__home app__route">
         <div className="app__container">
- 
 
-          <a
-            href="#login"
-            onClick={this.handleClickLogin}
-            className={cx('btn btn-lg btn-primary btn-icon', {
-              'btn-loading': user.status === 'running',
-            })}
-          >
-            <i className="i-sign-in" />
-            <span>Start</span>
-          </a>
+ 
         </div>
       </div>
     );
