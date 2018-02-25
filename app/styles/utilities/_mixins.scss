@@ -124,6 +124,12 @@ $position: left) {
   .app__main {
     margin-top: $header-height-min;
   }
+  .app__menu {
+    display: none;
+    &-footer {
+      display: block !important;
+    }
+  }
 
 }
 @media only screen and (min-width: 800px) {

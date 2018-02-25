@@ -15,13 +15,13 @@ export const appState = {
       ['shop','shop','primary']
     ],
     secondary:[
-      ['home','discover','primary'],
+      ['discover','home','primary'],
       ['about','about','secondary'],
       ['partner','partner','secondary'],
       ['support','support','secondary'],
       ['shop','shop','secondary']
     ],
-    display: 'secondary',
+    display: 'primary',
   },
 };
 

@@ -3,8 +3,9 @@
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	height: $header-height;
-
+	flex-wrap: wrap;
+	min-height: $header-height;
+	padding: 2rem;
 	div {
 		font-family: 'nexa-bold';
 		font-size: $font-size-h2;

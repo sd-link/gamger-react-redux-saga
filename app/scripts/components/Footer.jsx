@@ -1,11 +1,27 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import SignUpBar from 'components/SignUpBar';
-const Footer = () => (
-  <footer className="app__footer">
-    <div className="app__container">
-      <SignUpBar/>
-    </div>
-  </footer>
-);
+import MenuBar from 'components/MenuBar';
+import SocialBar from 'components/SocialBar';
+export default class Footer extends React.PureComponent {
+  static propTypes = {
+    dispatch: PropTypes.func.isRequired,
+    user: PropTypes.object.isRequired,
+    menus: PropTypes.object.isRequired,
+  };
 
-export default Footer;
+  render() {
+    const { dispatch, user, menus } = this.props;
+    return (
+      <footer className="app__footer">
+        <SignUpBar/>
+        <MenuBar menus={menus} footer={true}/>
+        <div className="app__container">
+          <SocialBar/>
+        </div>
+      </footer>
+    )
+  }
+}
+
+ 

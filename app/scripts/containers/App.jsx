@@ -61,14 +61,14 @@ export class App extends React.Component {
 
           <main className="app__main">          
             <SignUpBar/>
-            <MenuBar menus={app.menus}/>
+            <MenuBar menus={app.menus} footer={false}/>
             <Switch>
               <RoutePublic isAuthenticated={user.isAuthenticated} path="/" exact component={Home} />
               <RoutePrivate isAuthenticated={user.isAuthenticated} path="/private" component={Private} />
               <Route component={NotFound} />
             </Switch>
           </main>
-          <Footer menus={app.menus} />
+          <Footer dispatch={dispatch} user={user} menus={app.menus} />
           <SystemAlerts alerts={app.alerts} dispatch={dispatch} />
         </div>
       </ConnectedRouter>
