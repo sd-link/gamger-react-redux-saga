@@ -8,18 +8,18 @@ export const appState = {
   alerts: [],
   menus: {
     primary:[
-      ['discover','discover','primary'],
-      ['create','create','primary'],
-      ['produce','produce','primary'],
-      ['explore','explore','primary'],
-      ['shop','shop','primary']
+      ['Home','Discover.','primary'],
+      ['Create','Create.','primary'],
+      ['Produce','Produce.','primary'],
+      ['Explore','Explore.','primary'],
+      ['Shop','Shop.','primary']
     ],
     secondary:[
-      ['discover','home','primary'],
-      ['about','about','secondary'],
-      ['partner','partner','secondary'],
-      ['support','support','secondary'],
-      ['shop','shop','secondary']
+      ['Home','Home.','primary'],
+      ['About','About.','secondary'],
+      ['Partner','Partner.','secondary'],
+      ['Support','Support.','secondary'],
+      ['Shop','Shop.','secondary']
     ],
     display: 'primary',
   },
@@ -35,7 +35,6 @@ export default {
     },
     [ActionTypes.HIDE_ALERT](state, { payload: { id } }) {
       const alerts = state.alerts.filter(d => d.id !== id);
-
       return immutable(state, {
         alerts: { $set: alerts },
       });
@@ -48,6 +47,9 @@ export default {
     [ActionTypes.PAGE_REDIRECT_SUCCESS](state, {payload}) {
       return immutable(state, {
         page: { $set: payload.page },
+        menus: { 
+          display: {$set: payload.menu_display}
+        }
       });
     },
 

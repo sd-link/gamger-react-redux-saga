@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { redirect } from 'actions';
 import PropTypes from 'prop-types';
 import config from 'config';
 
@@ -12,6 +12,7 @@ export default class MenuBar extends React.Component {
 			fixed: false,
 			menus: PropTypes.object.isRequired,
 			footer: PropTypes.object.isRequired,
+			dispatch: PropTypes.func.isRequired,
 		});
 		//this.toggle = this.toggle.bind(this);
 	}
@@ -30,14 +31,14 @@ export default class MenuBar extends React.Component {
 		});
 
 	}
-  handleClick(item, target) {
-    window.location = target;
+  handleClick(item, page, menu_display) {
+    this.props.dispatch(redirect(page, menu_display));
   }
 
 
   render() {
 		const rm = this;
-		const { menus, footer } = this.props;
+		const { menus, footer, dispatch } = this.props;
 		var menu_css = this.state.fixed ? "app__menu fixed_top":"app__menu";
 		var menu_type = menus.display;
 		if (footer) {
@@ -49,7 +50,7 @@ export default class MenuBar extends React.Component {
 				<ul className="app__menu-primary">
 					{
 						menus[menu_type].map((item, index) => (
-							<li key={index} onClick={rm.handleClick.bind(null, item[1], item[0])}>{item[1]}</li>
+							<li key={index} onClick={rm.handleClick.bind(this, item[1], item[0], item[2])}>{item[1]}</li>
 						))
 					}
 				</ul>

@@ -15,7 +15,7 @@ export default class Footer extends React.PureComponent {
     return (
       <footer className="app__footer">
         <SignUpBar/>
-        <MenuBar menus={menus} footer={true}/>
+        <MenuBar menus={menus} footer={true} dispatch={dispatch} />
         <div className="app__container">
           <SocialBar/>
         </div>

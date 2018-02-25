@@ -15,7 +15,7 @@ import { ActionTypes } from 'constants/index';
 export function* redirect(payload) {
   try {
     yield put({
-      payload: payload.page,
+      payload: payload,
       type: ActionTypes.PAGE_REDIRECT_SUCCESS,
     });
   }

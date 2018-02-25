@@ -16,7 +16,7 @@ export default class RightMenu extends React.Component {
   };
   
   //
-  handleClick(item, target) {
+  handleClick(item, page, menu_display) {
     switch (item) {
       case 0:
         this.props.dispatch(logOut());
@@ -28,7 +28,7 @@ export default class RightMenu extends React.Component {
         window.location.hash = 'login';
         break;
       default:
-        this.props.dispatch(redirect(target));
+        this.props.dispatch(redirect(page, menu_display));
     }
   }
   render() {
@@ -37,14 +37,14 @@ export default class RightMenu extends React.Component {
     return (
       <Menu showDividers={true} position='right'>
         <SocialBar/>
-        {!user.isAuthenticated && <Item onClick={this.handleClick.bind(this, 1, '')}><i className="i-sign-in" />SignIn</Item>}
-        {!user.isAuthenticated && <Item onClick={this.handleClick.bind(this, 2, '')}><i className="i-edit" />SignUp</Item>}
+        {!user.isAuthenticated && <Item onClick={this.handleClick.bind(this, 1, '', '')}><i className="i-sign-in" />SignIn</Item>}
+        {!user.isAuthenticated && <Item onClick={this.handleClick.bind(this, 2, '', '')}><i className="i-edit" />SignUp</Item>}
         {
           menus[menus.display].map((item, index) => (
-            <Item key={index} onClick={rm.handleClick.bind(this, item[1], item[0] )}>{item[1]}</Item>
+            <Item key={index} onClick={rm.handleClick.bind(this, item[1], item[0], item[2] )}>{item[1]}</Item>
           ))
         }
-        {user.isAuthenticated && <Item onClick={this.handleClick.bind(this, 0, '')}>SignOut<i className="i-sign-out" /></Item>}
+        {user.isAuthenticated && <Item onClick={this.handleClick.bind(this, 0, '', '')}>SignOut<i className="i-sign-out" /></Item>}
       </Menu>
     );
   }

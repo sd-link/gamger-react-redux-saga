@@ -54,13 +54,15 @@ export function showAlert(message: string, options: Object): Object {
 /**
  * retdirect page
  * @param {string} page
+ * @param {string} menus.display
  * 
  * @returns {Object}
  */
-export function redirect(page: string): Object {
+export function redirect(page: string, menu_display: string): Object {
   return {
     type: ActionTypes.PAGE_REDIRECT_REQUEST,
-    page: {page},
+    page: page ,
+    menu_display: menu_display,
   };
 }
 

@@ -44,7 +44,6 @@ export class App extends React.Component {
 
   render() {
     const { app, dispatch, user } = this.props;
-    console.log(app.page)
     return (
       <ConnectedRouter history={history}>
         <div
@@ -64,7 +63,7 @@ export class App extends React.Component {
 
           <main className="app__main">          
             <SignUpBar/>
-            <MenuBar menus={app.menus} footer={false}/>
+            <MenuBar menus={app.menus} footer={false} dispatch={dispatch} />
             <Switch>
               <RoutePublic isAuthenticated={user.isAuthenticated} path="/" exact component={Home} />
               <RoutePublic isAuthenticated={user.isAuthenticated} path="/test"  component={Test} />
