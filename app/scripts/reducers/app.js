@@ -45,9 +45,9 @@ export default {
         alerts: { $push: [payload] },
       });
     },
-    [ActionTypes.PAGE_REDIRECT_SUCCESS](state) {
+    [ActionTypes.PAGE_REDIRECT_SUCCESS](state, {payload}) {
       return immutable(state, {
-        page: { $set: state },
+        page: { $set: payload.page },
       });
     },
 

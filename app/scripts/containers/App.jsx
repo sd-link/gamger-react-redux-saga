@@ -44,6 +44,7 @@ export class App extends React.Component {
 
   render() {
     const { app, dispatch, user } = this.props;
+    console.log(app.page)
     return (
       <ConnectedRouter history={history}>
         <div

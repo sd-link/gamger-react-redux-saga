@@ -12,9 +12,10 @@ import { ActionTypes } from 'constants/index';
 /**
  * redirect
  */
-export function* redirect() {
+export function* redirect(payload) {
   try {
     yield put({
+      payload: payload.page,
       type: ActionTypes.PAGE_REDIRECT_SUCCESS,
     });
   }
