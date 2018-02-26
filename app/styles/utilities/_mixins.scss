@@ -126,7 +126,7 @@ $position: left) {
     margin-top: $header-height-min;
   }
   .app__menu {
-    display: none;
+    display: none !important;
     &-footer {
       display: block !important;
     }

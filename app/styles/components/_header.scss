@@ -1,5 +1,5 @@
 .app__header {
-  background-color: rgba($app-color, 0.85);
+  background-color: rgba($app-color, 0.8);
   height: $header-height;
   left: 0;
   //position: fixed;
@@ -32,6 +32,8 @@
   .app__container__logo {
     display: flex;
     flex-direction: column;
+    margin: 0px !important;
+    padding: 0px !important;
     .logo-description {
       font-family: 'nexa-bold';
       font-size: 2rem;

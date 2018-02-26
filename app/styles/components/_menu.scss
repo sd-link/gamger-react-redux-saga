@@ -1,10 +1,14 @@
 .app__menu {
 	line-height: $header-height-min;
 	background: $app-color;	
-	width: 100%;
 	z-index: 50;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	width: 100vw;
 	ul {
 		margin: 0;
+		width: 100vw;
 	}
  	&-primary {
 		@include app-container ();
@@ -20,7 +24,7 @@
 				font-family: 'nexa-bold';
 				font-size: $font-size-h4;
 				text-transform: uppercase;
-				padding: 0 0.3rem;
+				padding: 0 1.5rem;
 				color: $text-color;
 
 				&:hover {
