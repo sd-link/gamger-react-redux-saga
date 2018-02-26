@@ -18,8 +18,7 @@ export const appState = {
       ['/home','Home.','primary'],
       ['/about','About.','secondary'],
       ['/partner','Partner.','secondary'],
-      ['/support','Support.','secondary'],
-      ['/shop','Shop.','secondary']
+      ['/support','Support.','secondary']
     ],
     display: 'primary',
   },
