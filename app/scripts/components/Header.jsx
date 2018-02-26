@@ -37,7 +37,6 @@ export default class Header extends React.PureComponent {
           
           <div className="app__container__logo">
             <Logo />
-            <div className="logo-description">game changing television</div>
           </div>
           <SocialBar />  
           <div className="app__container__login">

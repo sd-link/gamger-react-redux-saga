@@ -17,10 +17,6 @@ $button-close-bg-active : $black;
 $button-close-fg        : $text-color;
 
 
-.impromptu-font-sans {
-	font-family: sans-serif;
-	font-size: 0.8em;
-}
 
 /* Button styles */
 
@@ -30,7 +26,7 @@ $button-close-fg        : $text-color;
 	justify-content: flex-end;
 	align-items: center;
 	height: $header-height-min;
-	padding: 10px 16px;
+	padding: 1rem 1.5rem;
 	cursor: pointer;
 	span {
 		font-family: nexa-bold;
@@ -39,8 +35,9 @@ $button-close-fg        : $text-color;
 		text-transform: uppercase;
 	}
 	i {
-		font-size: $header-height-min/2.5;
+		font-size: $header-height-min/2;
 		color: $primary-color;
+		margin: 0 0 3px 0
 	}	
 }
 
@@ -143,8 +140,11 @@ $button-close-fg        : $text-color;
 		color: $menu-text-active;
 		background: $menu-selected-bg;
 	}
-	.sidebar-nav li.sidebar-item a{
-		width: 100%;
+	.sidebar-nav li.sidebar-item span{
+		font-size: $font-size-h4;	
+		a {
+			width: 100%;
+		}
 	}
 	
 	.sidebar-nav li.sidebar-item a.active{

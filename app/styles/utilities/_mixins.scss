@@ -98,11 +98,7 @@ $position: left) {
     .app__container {
       .app__container__logo {
         .app__logo svg {
-          height: $header-height-min/3;
-          max-width: 17rem;
-        }
-        .logo-description {
-          font-size: 1.1rem;
+          max-width: 18rem;
         }
       }
       >.app__socialbar {

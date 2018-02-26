@@ -27,20 +27,18 @@
     padding-bottom: $grid-gutter-width / 2;
     padding-top: $grid-gutter-width / 2;
 
-
+  }
+  .app__container__login{
+    display: flex;
+    justify-content: center;
+    width: 30rem;
+    max-width: 30vw;
   }
   .app__container__logo {
     display: flex;
     flex-direction: column;
     margin: 0px !important;
     padding: 0px !important;
-    .logo-description {
-      font-family: 'nexa-bold';
-      font-size: 2rem;
-      color: $primary-color;
-      transition-duration: 0.2s;
-      -webkit-transition-duration: 0.2s;
-    }
   }
 
   h1 {

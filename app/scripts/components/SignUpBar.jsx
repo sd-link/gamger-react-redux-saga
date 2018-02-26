@@ -6,7 +6,7 @@ import config from 'config';
 const SignUplBar=() => (
   <div className="app__signup-bar">
 	<div className="notice1">
-		Get your binge on!
+		Don't just watch, get involved!
 	</div>
 	<button className="btn btn-outline-secondary">Sign Up </button>
   </div>
