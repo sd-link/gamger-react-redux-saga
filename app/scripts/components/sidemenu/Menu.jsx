@@ -53,7 +53,6 @@ export default class Menu extends React.Component {
 						</a>
 						{
 							React.Children.map(this.props.children, function(item) {
-								
 								if (item === null) return null;
 								var onClick = function() {
 									if ('function' === typeof item.props.onClick)
@@ -67,7 +66,7 @@ export default class Menu extends React.Component {
 											{item}
 										</li>
 									);
-								} else if (item.type.displayName === "Item") {
+								} else if (item.type.displayName === "Item" || item.type.name === "Item") {
 									return (
 										<li className="sidebar-item" onClick={onClick.bind(this)}>
 											<span>{item.props.children}</span>
