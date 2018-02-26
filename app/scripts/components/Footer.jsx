@@ -8,14 +8,15 @@ export default class Footer extends React.PureComponent {
     dispatch: PropTypes.func.isRequired,
     user: PropTypes.object.isRequired,
     menus: PropTypes.object.isRequired,
+    page: PropTypes.object.isRequired,
   };
 
   render() {
-    const { dispatch, user, menus } = this.props;
+    const { dispatch, user, menus, page } = this.props;
     return (
       <footer className="app__footer">
         <SignUpBar/>
-        <MenuBar menus={menus} footer={true} dispatch={dispatch} />
+        <MenuBar  page={page} menus={menus} footer={true} dispatch={dispatch} />
         <div className="app__container">
           <SocialBar/>
         </div>

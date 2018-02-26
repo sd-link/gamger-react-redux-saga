@@ -9,6 +9,7 @@ export default class MenuBar extends React.Component {
 		super(props);
 		this.state = ({
 			fixed: false,
+			page: PropTypes.object.isRequired,
 			menus: PropTypes.object.isRequired,
 			footer: PropTypes.object.isRequired,
 			dispatch: PropTypes.func.isRequired,
@@ -30,15 +31,16 @@ export default class MenuBar extends React.Component {
 		});
 
 	}
-  handleClick(item, page, menu_display) {
+  handleClick(name, item, page, menu_display) {
 		this.props.dispatch(redirect(page, menu_display));
   }
 
 
   render() {
 		const rm = this;
-		const { menus, footer, dispatch } = this.props;
+		const { page, menus, footer, dispatch } = this.props;
 		var menu_css = this.state.fixed ? "app__menu fixed_top":"app__menu";
+		
 		var menu_type = menus.display;
 		if (footer) {
 			menu_type = "secondary";
@@ -49,8 +51,8 @@ export default class MenuBar extends React.Component {
 				<ul className="app__menu-primary">
 					{
 						menus[menu_type].map((item, index) => (
-							<li key={index} onClick={rm.handleClick.bind(this, item[1], item[0], item[2])}>
-								<Link to={item[0]}>
+							<li key={index} className={'menu_'+ menu_type + index} onClick={rm.handleClick.bind(this, 'menu_'+ menu_type + index, item[1], item[0], item[2])}>
+								<Link to={item[0]} className={item[0]=== page?'active':''}>
 									{item[1]}
 								</Link>
 							</li>

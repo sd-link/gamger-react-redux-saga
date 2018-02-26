@@ -44,8 +44,6 @@ export class App extends React.Component {
 
   render() {
     const { app, dispatch, user } = this.props;
-    console.log(app)
-    //app.page
     return (
       <ConnectedRouter history={history}>
         <div
@@ -65,7 +63,7 @@ export class App extends React.Component {
 
           <main className="app__main">          
             <SignUpBar/>
-            <MenuBar menus={app.menus} footer={false} dispatch={dispatch} />
+            <MenuBar page={app.page} menus={app.menus} footer={false} dispatch={dispatch} />
             <Switch>
               <RoutePublic isAuthenticated={user.isAuthenticated} path="/" exact component={Home} component_name={app.page} />
               <RoutePublic isAuthenticated={user.isAuthenticated} path="/test" component={Test} component_name={app.test} />
@@ -73,7 +71,7 @@ export class App extends React.Component {
               <Route component={NotFound} />
             </Switch>
           </main>
-          <Footer dispatch={dispatch} user={user} menus={app.menus} />
+          <Footer dispatch={dispatch} user={user} menus={app.menus} page={app.page} />
           <SystemAlerts alerts={app.alerts} dispatch={dispatch} />
         </div>
       </ConnectedRouter>

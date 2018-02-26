@@ -24,10 +24,10 @@
 				color: $text-color;
 
 				&:hover {
-					color: $secondary-color;
-				}
-				&:active {
 					color: $primary-color;
+				}
+				&:active,&.active {
+					color: $secondary-color;
 				}
 			}
 		}
