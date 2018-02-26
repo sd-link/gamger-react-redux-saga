@@ -15,6 +15,7 @@ export default class RightMenu extends React.Component {
     dispatch: PropTypes.func.isRequired,
     user: PropTypes.object.isRequired,
     menus: PropTypes.object.isRequired,
+    page: PropTypes.object.isRequired,
   };
   
   //
@@ -35,7 +36,7 @@ export default class RightMenu extends React.Component {
   }
   render() {
     const rm = this;
-    const { dispatch, user, menus } = this.props;
+    const { dispatch, user, menus, page } = this.props;
     return (
       <Menu showDividers={true} position='right'>
         <SocialBar/>
@@ -44,7 +45,7 @@ export default class RightMenu extends React.Component {
         {
           menus[menus.display].map((item, index) => (
             <Item key={index} onClick={rm.handleClick.bind(this, item[1], item[0], item[2] )}>
-              <Link to={item[0]}>
+              <Link to={item[0]} className={item[0]=== page?'active':''}>
                 {item[1]}
               </Link>            
             </Item>

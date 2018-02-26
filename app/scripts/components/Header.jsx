@@ -12,6 +12,7 @@ export default class Header extends React.PureComponent {
     dispatch: PropTypes.func.isRequired,
     user: PropTypes.object.isRequired,
     menus: PropTypes.object.isRequired,
+    page: PropTypes.object.isRequired,
   };
 
   handleClickLogout = e => {
@@ -29,7 +30,7 @@ export default class Header extends React.PureComponent {
   };
 
   render() {
-    const { dispatch, user, menus } = this.props;
+    const { dispatch, user, menus, page } = this.props;
     return (
       <header className="app__header">
         <div className="app__container">
@@ -53,7 +54,7 @@ export default class Header extends React.PureComponent {
           
           </div>
           <div className="app__header__menu">
-            <RightMenu user={user} dispatch={dispatch} menus={menus} history={this.props.history}/>
+            <RightMenu user={user} dispatch={dispatch} menus={menus} page={page}/>
           </div>
         </div>
       </header>

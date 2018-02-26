@@ -59,7 +59,7 @@ export class App extends React.Component {
             titleTemplate={`%s | ${config.name}`}
             titleAttributes={{ itemprop: 'name', lang: 'pt-br' }}
           />
-          <Header dispatch={dispatch} user={user} menus={app.menus}/>
+          <Header dispatch={dispatch} user={user} menus={app.menus} page={app.page}/>
 
           <main className="app__main">          
             <SignUpBar/>

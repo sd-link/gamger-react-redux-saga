@@ -31,7 +31,7 @@ export default class MenuBar extends React.Component {
 		});
 
 	}
-  handleClick(name, item, page, menu_display) {
+  handleClick(item, page, menu_display) {
 		this.props.dispatch(redirect(page, menu_display));
   }
 
@@ -51,7 +51,7 @@ export default class MenuBar extends React.Component {
 				<ul className="app__menu-primary">
 					{
 						menus[menu_type].map((item, index) => (
-							<li key={index} className={'menu_'+ menu_type + index} onClick={rm.handleClick.bind(this, 'menu_'+ menu_type + index, item[1], item[0], item[2])}>
+							<li key={index}  onClick={rm.handleClick.bind(this, item[1], item[0], item[2])}>
 								<Link to={item[0]} className={item[0]=== page?'active':''}>
 									{item[1]}
 								</Link>
