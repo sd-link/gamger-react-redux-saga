@@ -94,6 +94,7 @@ $position: left) {
   .app__header {
     position: fixed !important;
     height: $header-height-min !important; 
+    background-color: $app-color !important;
     .app__container {
       .app__container__logo {
         .app__logo svg {

@@ -2,6 +2,7 @@ import React from 'react';
 import { redirect } from 'actions';
 import PropTypes from 'prop-types';
 import config from 'config';
+import Logo from 'components/Logo';
 import { Link, withRouter } from 'react-router-dom'
 
 export default class MenuBar extends React.Component {
