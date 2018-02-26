@@ -27,7 +27,9 @@ export default class MenuBar extends React.Component {
 		window.removeEventListener('scroll', this.handleScroll);
 	}
 	handleScroll = e => {
+		
 		var scroll = document.documentElement.scrollTop;
+		scroll = scroll?scroll:document.getElementsByTagName("BODY")[0].scrollTop;
 		var top_height = this.props.user.isAuthenticated?100:230;
 		this.setState({	
 			fixed: (scroll > top_height) && (!this.props.footer)
