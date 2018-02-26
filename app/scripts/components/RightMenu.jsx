@@ -8,6 +8,8 @@ import Menu from 'components/sidemenu/Menu';
 import Item from 'components/sidemenu/Item';
 import Logo from 'components/Logo';
 import SocialBar from 'components/SocialBar';
+import { Link, withRouter } from 'react-router-dom'
+
 export default class RightMenu extends React.Component {
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
@@ -41,7 +43,11 @@ export default class RightMenu extends React.Component {
         {!user.isAuthenticated && <Item onClick={this.handleClick.bind(this, 2, '', '')}><i className="i-edit" />SignUp</Item>}
         {
           menus[menus.display].map((item, index) => (
-            <Item key={index} onClick={rm.handleClick.bind(this, item[1], item[0], item[2] )}>{item[1]}</Item>
+            <Item key={index} onClick={rm.handleClick.bind(this, item[1], item[0], item[2] )}>
+              <Link to={item[0]}>
+                {item[1]}
+              </Link>            
+            </Item>
           ))
         }
         {user.isAuthenticated && <Item onClick={this.handleClick.bind(this, 0, '', '')}>SignOut<i className="i-sign-out" /></Item>}

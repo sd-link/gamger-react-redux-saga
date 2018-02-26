@@ -16,15 +16,19 @@
 		list-style: none;
 
 		li {
-			font-family: 'nexa-bold';
-			font-size: $font-size-h4;
-			text-transform: uppercase;
-			padding: 0 0.3rem;
-			&:hover {
-				color: $secondary-color;
-			}
-			&:active {
-				color: $primary-color;
+			a {
+				font-family: 'nexa-bold';
+				font-size: $font-size-h4;
+				text-transform: uppercase;
+				padding: 0 0.3rem;
+				color: $text-color;
+
+				&:hover {
+					color: $secondary-color;
+				}
+				&:active {
+					color: $primary-color;
+				}
 			}
 		}
 	}

@@ -8,22 +8,22 @@ export const appState = {
   alerts: [],
   menus: {
     primary:[
-      ['Home','Discover.','primary'],
-      ['Create','Create.','primary'],
-      ['Produce','Produce.','primary'],
-      ['Explore','Explore.','primary'],
-      ['Shop','Shop.','primary']
+      ['/home','Discover.','primary'],
+      ['/test','Create.','primary'],
+      ['/produce','Produce.','primary'],
+      ['/explore','Explore.','primary'],
+      ['/shop','Shop.','primary']
     ],
     secondary:[
-      ['Home','Home.','primary'],
-      ['About','About.','secondary'],
-      ['Partner','Partner.','secondary'],
-      ['Support','Support.','secondary'],
-      ['Shop','Shop.','secondary']
+      ['/home','Home.','primary'],
+      ['/about','About.','secondary'],
+      ['/partner','Partner.','secondary'],
+      ['/support','Support.','secondary'],
+      ['/shop','Shop.','secondary']
     ],
     display: 'primary',
   },
-  page: 'home',
+  page: 'Home',
 };
 
 export default {

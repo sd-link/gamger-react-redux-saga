@@ -138,12 +138,14 @@ $button-close-fg        : $text-color;
 		align-items: center;
 	}
 
-	.sidebar-nav li.sidebar-item *:hover {
+	.sidebar-nav li.sidebar-item:hover {
 		text-decoration: none;
 		color: $menu-text-active;
 		background: $menu-selected-bg;
 	}
-
+	.sidebar-nav li.sidebar-item a{
+		width: 100%;
+	}
 	.sidebar-nav li.sidebar-item a:active,
 	.sidebar-nav li.sidebar-item a:focus {
 		text-decoration: none;

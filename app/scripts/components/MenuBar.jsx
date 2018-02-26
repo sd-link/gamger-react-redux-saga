@@ -2,8 +2,7 @@ import React from 'react';
 import { redirect } from 'actions';
 import PropTypes from 'prop-types';
 import config from 'config';
-
-
+import { Link, withRouter } from 'react-router-dom'
 
 export default class MenuBar extends React.Component {
 	constructor(props) {
@@ -32,7 +31,7 @@ export default class MenuBar extends React.Component {
 
 	}
   handleClick(item, page, menu_display) {
-    this.props.dispatch(redirect(page, menu_display));
+		this.props.dispatch(redirect(page, menu_display));
   }
 
 
@@ -50,7 +49,11 @@ export default class MenuBar extends React.Component {
 				<ul className="app__menu-primary">
 					{
 						menus[menu_type].map((item, index) => (
-							<li key={index} onClick={rm.handleClick.bind(this, item[1], item[0], item[2])}>{item[1]}</li>
+							<li key={index} onClick={rm.handleClick.bind(this, item[1], item[0], item[2])}>
+								<Link to={item[0]}>
+									{item[1]}
+								</Link>
+							</li>
 						))
 					}
 				</ul>
