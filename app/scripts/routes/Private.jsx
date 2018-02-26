@@ -8,13 +8,13 @@ export default class Private extends React.PureComponent {
       <div key="Private" className="app__private app__route">
         <div className="app__container">
           <div className="app__private__header">
-            <h1>Oh hai!</h1>
+            <h1>Welcome!</h1>
           </div>
           <div className="app__private__content">
             <div className="app__private__intro">
-              <small className="text-muted"><i>*Just to have some requests in the sagas...</i></small>
+              <small className="text-muted"><i>Comming soon...</i></small>
             </div>
-            <Github />
+            {/* <Github /> */}
           </div>
         </div>
       </div>

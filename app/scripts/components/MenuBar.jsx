@@ -9,10 +9,11 @@ export default class MenuBar extends React.Component {
 		super(props);
 		this.state = ({
 			fixed: false,
-			page: PropTypes.object.isRequired,
+			page: PropTypes.string.isRequired,
 			menus: PropTypes.object.isRequired,
 			footer: PropTypes.object.isRequired,
 			dispatch: PropTypes.func.isRequired,
+			user: PropTypes.object.isRequired,
 		});
 		//this.toggle = this.toggle.bind(this);
 	}
@@ -25,9 +26,10 @@ export default class MenuBar extends React.Component {
 		window.removeEventListener('scroll', this.handleScroll);
 	}
 	handleScroll = e => {
-		scroll = document.documentElement.scrollTop;
-		this.setState({
-			fixed: (scroll > 230) && (!this.props.footer)
+		var scroll = document.documentElement.scrollTop;
+		var top_height = this.props.user.isAuthenticated?100:230;
+		this.setState({	
+			fixed: (scroll > top_height) && (!this.props.footer)
 		});
 
 	}
@@ -38,9 +40,8 @@ export default class MenuBar extends React.Component {
 
   render() {
 		const rm = this;
-		const { page, menus, footer, dispatch } = this.props;
+		const { page, menus, footer, dispatch , user } = this.props;
 		var menu_css = this.state.fixed ? "app__menu fixed_top":"app__menu";
-		
 		var menu_type = menus.display;
 		if (footer) {
 			menu_type = "secondary";

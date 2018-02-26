@@ -62,8 +62,8 @@ export class App extends React.Component {
           <Header dispatch={dispatch} user={user} menus={app.menus} page={app.page}/>
 
           <main className="app__main">          
-            <SignUpBar/>
-            <MenuBar page={app.page} menus={app.menus} footer={false} dispatch={dispatch} />
+          {!user.isAuthenticated&&<SignUpBar/>}
+            <MenuBar page={app.page} menus={app.menus} footer={false} dispatch={dispatch} user={user} />
             <Switch>
               <RoutePublic isAuthenticated={user.isAuthenticated} path="/" exact component={Home} component_name={app.page} />
               <RoutePublic isAuthenticated={user.isAuthenticated} path="/test" component={Test} component_name={app.test} />

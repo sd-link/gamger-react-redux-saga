@@ -8,8 +8,8 @@ export const appState = {
   alerts: [],
   menus: {
     primary:[
-      ['/home','Discover.','primary'],
-      ['/test','Create.','primary'],
+      ['/discover','Discover.','primary'],
+      ['/create','Create.','primary'],
       ['/produce','Produce.','primary'],
       ['/explore','Explore.','primary'],
       ['/shop','Shop.','primary']

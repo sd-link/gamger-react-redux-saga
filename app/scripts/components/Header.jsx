@@ -12,7 +12,7 @@ export default class Header extends React.PureComponent {
     dispatch: PropTypes.func.isRequired,
     user: PropTypes.object.isRequired,
     menus: PropTypes.object.isRequired,
-    page: PropTypes.object.isRequired,
+    page: PropTypes.string.isRequired,
   };
 
   handleClickLogout = e => {

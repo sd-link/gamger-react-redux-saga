@@ -15,7 +15,7 @@ export default class RightMenu extends React.Component {
     dispatch: PropTypes.func.isRequired,
     user: PropTypes.object.isRequired,
     menus: PropTypes.object.isRequired,
-    page: PropTypes.object.isRequired,
+    page: PropTypes.string.isRequired,
   };
   
   //
