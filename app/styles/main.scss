@@ -24,7 +24,7 @@
 @import 'modules/buttons';
 @import 'modules/icons';
 @import 'modules/transitions';
-
+@import 'modules/normalize';
 // *** Components
 @import 'components/alert';
 @import 'components/footer';
@@ -36,6 +36,7 @@
 @import 'components/signup-bar';
 @import 'components/social-bar';
 @import 'components/menu';
+@import 'components/slider';
 
 // *** Containers
 @import 'containers/github';

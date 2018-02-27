@@ -4,9 +4,9 @@ import { connect } from 'react-redux';
 import cx from 'classnames';
 
 import config from 'config';
-
 import Logo from 'components/Logo';
 import { login } from 'actions/index';
+import Slider from 'react-animated-slider';
 
 export class Home extends React.PureComponent {
   static propTypes = {
@@ -23,21 +23,58 @@ export class Home extends React.PureComponent {
   render() {
     const { user } = this.props;
 
+    const content = [
+      {
+        title: 'Title1',
+        description:
+        'Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras justo odio, dapibus ac facilisis.',
+        button: 'Read More',
+        image: '/media/banner/banner1.png',
+ 
+      },
+      {
+        title: 'Title2',
+        description:
+        'Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec sed odio dui.',
+        button: 'Discover',
+        image: 'assets/media/banner/banner2.png',
+ 
+      },
+      {
+        title: 'Title3',
+        description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis, est non commodo luctus, nisi erat porttitor ligula.',
+        button: 'Buy now',
+        image: 'assets/media/banner/banner3.png',
+ 
+      }
+    ];
+
     return (
-      <div key="Home" className="app__home app__route">
+      <div key="Home" className="app__home app__route r-mt-20">
         <div className="app__container">
-          <div className="banner-container">
-            <img src={require(`assets/media/banner/banner0.png`)} />
+          <div>
+            <Slider className="slider-wrapper">
+              {content.map((item, index) => (
+                <div
+                  key={index}
+                  className="slider-content"
+                  style={{ background: `url('${item.image}') no-repeat` }}
+                >
+                 
+                  <div className="inner"> 
+                    <h1>{item.title}</h1>
+                    <p>{item.description}</p>
+                    <button>{item.button}</button>
+                  </div>
+ 
+                </div>
+              ))}
+            </Slider>
           </div>
-          <div className="banner-container">
-            <img src={require(`assets/media/banner/banner1.png`)} />
-          </div>
-          <div className="banner-container">
-            <img src={require(`assets/media/banner/banner2.png`)} />
-          </div>
-          <div className="banner-container">
-            <img src={require(`assets/media/banner/banner3.png`)} />
-          </div>
+
+
+           
           <div className="r-mt-30">
             <img src={require(`assets/media/banner/banner4.png`)} />
           </div>
@@ -51,9 +88,6 @@ export class Home extends React.PureComponent {
             <div className="r-mt-30 r-mb-20 r-size-h4 r-font-nexa r-align-center">
               EXPLORE OUR NETWORK AND BINGE FOR A GOOD CAUSE.
             </div>  
-
-
-
           </div>
         </div>
       </div>
