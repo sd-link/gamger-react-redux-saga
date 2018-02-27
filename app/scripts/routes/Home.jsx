@@ -38,7 +38,7 @@ export class Home extends React.PureComponent {
           <div className="banner-container">
             <img src={require(`assets/media/banner/banner3.png`)} />
           </div>
-          <div className="banner-container">
+          <div className="r-mt-30">
             <img src={require(`assets/media/banner/banner4.png`)} />
           </div>
           <div className="r-mt-50 r-flex r-flex-center r-flex-rows">
