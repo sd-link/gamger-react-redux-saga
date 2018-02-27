@@ -56,7 +56,7 @@ export default class MenuBar extends React.Component {
 					{
 						menus[menu_type].map((item, index) => (
 							<li key={index}  onClick={rm.handleClick.bind(this, item[1], item[0], item[2])}>
-								<Link to={item[0]} className={item[0]=== page?'active':''}>
+								<Link to={'/'+item[0]} className={item[0]=== page?'active':''}>
 									{item[1]}
 								</Link>
 							</li>

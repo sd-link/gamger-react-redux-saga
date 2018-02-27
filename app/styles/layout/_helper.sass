@@ -1,0 +1,116 @@
+.r-
+  &bold
+    font-weight: 700
+  &size
+    &-h1
+      font-size: $font-size-h1
+    &-h2
+      font-size: $font-size-h2
+    &-h3
+      font-size: $font-size-h3
+    &-h4
+      font-size: $font-size-h4
+    &-h5
+      font-size: $font-size-h5
+  &font
+    &-nexa
+      font-family: 'nexa-bold'
+  &color
+    &-primary
+      color: $primary-color
+    &-secondary
+      color: $secondary-color
+  &align
+    &-center
+      text-align: center
+
+  &flex
+    display: flex
+
+    &-full
+      flex: 1 100%
+    &-full-width
+      flex: 1
+      &.container-fluid
+        margin-right: 0
+        margin-left: 0
+
+    &-nowrap
+      flex-wrap: nowrap
+    &-wrap
+      flex-wrap: wrap
+
+    &-rows
+      flex-direction: column
+      //overflow: hidden
+
+    &-right
+      justify-content: flex-end
+    &-justify
+      justify-content: space-between
+    &-center
+      justify-content: center
+    &-v-center
+      align-items: center
+    &-v-bottom
+      align-items: flex-end
+    &-v-justify
+      align-items: stretch
+
+  &overflow-auto
+    overflow: auto
+
+  &noselect
+    user-select: none
+
+  &size-
+    $i: 12
+    $step: 2
+    @while $i <= 42
+      &#{$i}
+        font-size: $i + px !important
+      $i: $i + $step
+  
+
+  &weight-
+    $i: 200
+    $step: 100
+    @while $i <= 1000
+      &#{$i}
+        font-weight: $i !important
+      $i: $i + $step
+  &br-
+    $i: 0
+    $step: 1
+    @while $i <= 50
+      &#{$i}
+        border-radius: $i + px !important
+      $i: $i + $step
+
+
+
+//atomic
+$spaces_max: 80
+$step: 5
+$i: 0
+@while $i <= $spaces_max
+  .r-mt-#{$i}
+    margin-top: $i + px !important
+  .r-mb-#{$i}
+    margin-bottom: $i + px !important
+  .r-ml-#{$i}
+    margin-left: $i + px !important
+  .r-mr-#{$i}
+    margin-right: $i + px !important
+  .r-pt-#{$i}
+    padding-top: $i + px !important
+  .r-pb-#{$i}
+    padding-bottom: $i + px !important
+  .r-pl-#{$i}
+    padding-left: $i + px !important
+  .r-pr-#{$i}
+    padding-right: $i + px !important
+  $i: $i + $step
+
+.r-width-quarter
+  width: 25%
