@@ -306,3 +306,38 @@ button:hover {
     font-size: 32px;
   }
 }
+
+.slide {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	overflow: hidden;
+}
+.slide.hidden {
+	visibility: hidden;
+}
+.slide.previous {
+	left: -100%;
+}
+.slide.current {
+	left: 0;
+}
+.slide.next {
+	left: 100%;
+}
+.slide.animateIn,
+	.slide.animateOut {
+	-webkit-transition: all 2s ease;
+	transition: all 2s ease;
+}
+.slide.animateIn.previous,
+		.slide.animateIn.next {
+	left: 0;
+	visibility: visible;
+}
+.slide.animateOut.previous {
+	left: 100%;
+}
+.slide.animateOut.next {
+	left: -100%;
+}

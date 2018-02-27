@@ -29,7 +29,7 @@ export class Home extends React.PureComponent {
         description:
         'Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras justo odio, dapibus ac facilisis.',
         button: 'Read More',
-        image: '/media/banner/banner1.png',
+        image: 'media/banner/banner1.png',
  
       },
       {
@@ -37,7 +37,7 @@ export class Home extends React.PureComponent {
         description:
         'Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec sed odio dui.',
         button: 'Discover',
-        image: 'assets/media/banner/banner2.png',
+        image: 'media/banner/banner2.png',
  
       },
       {
@@ -45,7 +45,7 @@ export class Home extends React.PureComponent {
         description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis, est non commodo luctus, nisi erat porttitor ligula.',
         button: 'Buy now',
-        image: 'assets/media/banner/banner3.png',
+        image: 'media/banner/banner3.png',
  
       }
     ];
@@ -59,7 +59,7 @@ export class Home extends React.PureComponent {
                 <div
                   key={index}
                   className="slider-content"
-                  style={{ background: `url('${item.image}') no-repeat` }}
+                  style={{ background: `url('${item.image}') no-repeat center ` }}
                 >
                  
                   <div className="inner"> 
