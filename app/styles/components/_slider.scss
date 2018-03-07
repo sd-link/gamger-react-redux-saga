@@ -320,8 +320,7 @@ button {
 	-webkit-transition: all 1s ease;
 	transition: all 1s ease;
 }
-.slide.animateIn.previous,
-		.slide.animateIn.next {
+.slide.animateIn.previous, .slide.animateIn.next {
 	left: 0;
 	visibility: visible;
 }
