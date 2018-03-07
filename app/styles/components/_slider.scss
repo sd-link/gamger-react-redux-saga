@@ -330,8 +330,7 @@ button:hover {
 	-webkit-transition: all 2s ease;
 	transition: all 2s ease;
 }
-.slide.animateIn.previous,
-		.slide.animateIn.next {
+.slide.animateIn.previous, .slide.animateIn.next {
 	left: 0;
 	visibility: visible;
 }
