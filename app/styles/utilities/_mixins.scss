@@ -83,6 +83,7 @@ $position: left) {
 
         @if ($size == xl) {
           max-width: 1440px;
+          width: 1440px;
         }
       }
     }

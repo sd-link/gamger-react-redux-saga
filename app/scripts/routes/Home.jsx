@@ -29,7 +29,7 @@ export class Home extends React.PureComponent {
         description:
         'Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras justo odio, dapibus ac facilisis.',
         button: 'Read More',
-        image: 'media/banner/banner1.png',
+        image: 'media/banner/banner0.png',
  
       },
       {
@@ -37,7 +37,7 @@ export class Home extends React.PureComponent {
         description:
         'Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec sed odio dui.',
         button: 'Discover',
-        image: 'media/banner/banner2.png',
+        image: 'media/banner/banner1.png',
  
       },
       {
@@ -45,38 +45,32 @@ export class Home extends React.PureComponent {
         description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis, est non commodo luctus, nisi erat porttitor ligula.',
         button: 'Buy now',
-        image: 'media/banner/banner3.png',
+        image: 'media/banner/banner2.png',
  
       }
     ];
-
+    //<img src={item.image} />
     return (
-      <div key="Home" className="app__home app__route r-mt-20">
+      <div key="Home" className="app__home app__route" >
+      
+        
+        <Slider className="slider-wrapper" duration="1000">
+          {content.map((item, index) => (
+            <div key={index} className="slider-content" style={{ background: `url('${item.image}') no-repeat center ` }}>
+              
+              <div className="inner r-flex-rows r-flex r-flex-left"> 
+                <h1>{item.title}</h1>
+                <p>{item.description}</p>
+                <button>{item.button}</button>
+              </div>
+
+            </div>
+          ))}
+        </Slider>
         <div className="app__container">
-          <div>
-            <Slider className="slider-wrapper">
-              {content.map((item, index) => (
-                <div
-                  key={index}
-                  className="slider-content"
-                  style={{ background: `url('${item.image}') no-repeat center ` }}
-                >
-                 
-                  <div className="inner"> 
-                    <h1>{item.title}</h1>
-                    <p>{item.description}</p>
-                    <button>{item.button}</button>
-                  </div>
- 
-                </div>
-              ))}
-            </Slider>
-          </div>
-
-
            
-          <div className="r-mt-30">
-            <img src={require(`assets/media/banner/banner4.png`)} />
+          <div className="r-align-center r-mt-30">
+            <img src='/media/banner/banner_special.png'/>
           </div>
           <div className="r-mt-50 r-flex r-flex-center r-flex-rows">
             <div className="r-size-h3 r-font-nexa r-align-center">

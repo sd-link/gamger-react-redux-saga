@@ -115,16 +115,9 @@
 }
 
 button {
-  -webkit-appearance: none;
-          appearance: none;
-  -webkit-filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.1));
-          filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.1));
-  -webkit-transition: all .5s ease;
-         filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.1));
-  -webkit-transition: all .5s ease;
-          transition: all .5s ease;
+ 
   border: none;
-  background: #FFD800;
+  background: $primary-color;
   border-radius: 30px;
   text-transform: uppercase;
   box-sizing: border-box;
@@ -134,12 +127,7 @@ button {
   cursor: cursor;
 }
 
-button:hover {
-  color: #FFFFFF;
-  background: #222222;
-  -webkit-filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
-          filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
-}
+
 
 .wrapper {
   max-width: 1335px;
@@ -159,12 +147,14 @@ button:hover {
 
 .slider-wrapper {
   position: relative;
-  height: 70vh;
+  height:  70vh;
+  max-height: 100vw/2;
   overflow: hidden;
 }
 
 .slide {
-  height: 70vh;
+  height:  70vh;
+  max-height: 100vw/2;
   background-size: cover !important;
 }
 
@@ -327,8 +317,8 @@ button:hover {
 }
 .slide.animateIn,
 	.slide.animateOut {
-	-webkit-transition: all 2s ease;
-	transition: all 2s ease;
+	-webkit-transition: all 1s ease;
+	transition: all 1s ease;
 }
 .slide.animateIn.previous,
 		.slide.animateIn.next {

@@ -7,11 +7,6 @@ button {
   line-height: 1;
   padding: 0;
 
-  &:active,
-  &:focus,
-  &:hover {
-    box-shadow: 1px 2px 4px rgba($white, 1);
-  }
 }
 
 .btn {
